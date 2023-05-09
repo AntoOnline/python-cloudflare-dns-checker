@@ -69,6 +69,7 @@ if response.status_code == 200:
                     print(f'- IPv4 address for {name}: {ip}')
                 except:
                     print('\033[91m- Error: DNS lookup failed\033[0m')
+                    sys.exit(1)  # exit with error code
 
                 # DNS lookup for AAAA record
                 try:
@@ -78,10 +79,9 @@ if response.status_code == 200:
                     print(f'- IPv6 address for {name}: {ip}')
                 except:
                     print('\033[91m- Error: DNS lookup failed\033[0m')
+                    sys.exit(1)  # exit with error code
 
-
-
-                # Test HTTP endpoint
+               # Test HTTP endpoint
                 try:
                     http_response = requests.get(
                         f'http://{name}/', timeout=timeout)
@@ -104,7 +104,5 @@ if response.status_code == 200:
                         '\033[91m- Error: HTTPS endpoint not reachable\033[0m')
                     https_status = None
 
-        else:
-            print(
-                f'Error: Cloudflare API returned status code {dns_response.status_code}')
-
+                if http_status == None or https_status == None:
+                    sys.exit(1)  # exit with error code if both endpoints are unreachable
