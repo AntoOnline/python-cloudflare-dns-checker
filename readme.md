@@ -1,6 +1,6 @@
 # Cloudflare DNS Checker
 
-This script retrieves all A records for all domains in a Cloudflare account, and performs DNS and nasic HTTP/HTTPS checks to verify that the records are set up correctly. It does not check SSL Certificate validity.
+This script retrieves all A and AAAA records for all domains in a Cloudflare account, and performs DNS and basic HTTP/HTTPS status code checks to verify that the records are set up correctly. It does not check SSL Certificate validity.
 
 ## Installation
 
@@ -23,6 +23,34 @@ The script will retrieve all A records for all domains in your Cloudflare accoun
 - HTTP request to the specified domain over both HTTP and HTTPS protocols.
 
 If any errors occur during these checks, they will be printed to the console.
+
+## Example output
+
+```
+--
+Zone for anto.online (zone_id: fsa5e492cabc)
+--
+- IPv4 address for anto.online: 1722.67.1631.80
+- IPv6 address for anto.online: 26206:4700:30330::ac43:a150
+- HTTP status code for anto.online: 200
+- HTTPS status code for anto.online: 200
+- IPv4 address for demo.anto.online: 1104.21.9.197
+- IPv6 address for demo.anto.online: 2606:47030:3030::ac43:a150
+- HTTP status code for demo.anto.online: 200
+- HTTPS status code for demo.anto.online: 200
+
+--
+Zone for example.com (zone_id: fsa5e492cabc)
+--
+- IPv4 address for example.com: 1014.211.7134.212
+- IPv6 address for example.com: 26106:4100:3037::6815:4ad4
+- HTTP status code for example.com: 200
+- HTTPS status code for example.com: 200
+- IPv4 address for www.example.com: 1172.617.2106.120
+- IPv6 address for www.example.com: 26106:4100:30337::6815:4ad4
+- HTTP status code for www.example.com: 200
+- HTTPS status code for www.example.com: 200
+```
 
 ## Configuration
 
