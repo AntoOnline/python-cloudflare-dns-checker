@@ -106,3 +106,5 @@ if response.status_code == 200:
 
                 if http_status == None or https_status == None:
                     sys.exit(1)  # exit with error code if both endpoints are unreachable
+
+sys.exit(0)
