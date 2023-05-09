@@ -61,3 +61,13 @@ The script is configured using the `config.ini` file. The file contains the foll
 - `timeout`: The timeout for DNS and HTTP requests, in seconds.
 
 You can modify these settings to match your Cloudflare account and DNS configuration.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Want to connect?
+
+Feel free to contact me on [Twitter](https://twitter.com/OnlineAnto), [DEV Community](https://dev.to/antoonline/) or [LinkedIn](https://www.linkedin.com/in/anto-online) if you have any questions or suggestions.
+
+Or just visit my [website](https://anto.online) to see what I do.
